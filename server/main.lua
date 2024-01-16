@@ -6,6 +6,7 @@ if not lib.checkDependency('oxmysql', '2.4.0') then return end
 if not lib.checkDependency('ox_lib', '3.14.0') then return end
 
 lib.versionCheck('overextended/ox_doorlock')
+lib.locale()
 
 local doors = {}
 
@@ -147,6 +148,7 @@ local function createDoor(id, door, name)
 end
 
 local isLoaded = false
+local table = lib.table
 local ox_inventory = exports.ox_inventory
 
 SetTimeout(1000, function()
